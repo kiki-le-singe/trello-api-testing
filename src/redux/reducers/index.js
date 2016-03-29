@@ -4,11 +4,9 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import tools from './tools';
 
 // combineReducers(reducers): http://rackt.github.io/redux/docs/api/combineReducers.html
 const rootReducer = combineReducers({
-  tools,
   routing: routerReducer,
 });
 
