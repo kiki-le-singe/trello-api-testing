@@ -79,10 +79,6 @@
     "eslint-plugin-react": "^4.2.3",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
-    "gulp": "^3.9.1",
-    "gulp-conventional-changelog": "^1.0.1",
-    "gulp-iconify": "^0.5.0",
-    "gulp-load-plugins": "^1.0.0",
     "html-webpack-plugin": "^2.12.0",
     "jasmine-core": "^2.3.4",
     "json-loader": "^0.5.4",
@@ -103,8 +99,6 @@
     "webpack-hot-middleware": "^2.10.0"
   },
   "scripts": {
-    "clean:build:styleguide": "rm -rf build_styleguide",
-    "clean:styleguide": "rm -rf styleguide",
     "clean:dist": "rm -rf dist",
     "deploy": "npm run clean:dist && npm run compile",
     "start": "npm run dev",
@@ -114,7 +108,6 @@
     "dev:stub": "npm run dev -- --stub",
     "prod": "babel-node server/server.production",
     "compile": "NODE_ENV=production babel-node ./node_modules/.bin/webpack --optimize-minimize --progress --config ./webpack/prod.config",
-    "lint": "eslint src",
-    "styleguide": "npm run clean:styleguide && npm run clean:build:styleguide && babel-node ./node_modules/.bin/webpack --config ./webpack/styleguide.config"
+    "lint": "eslint src"
   }
 }

@@ -18,10 +18,8 @@ function Menu(props, context) {
       <h2>Menu</h2>
       <ul>
         <li><Link to="/" onClick={ _toggleMenu }>Home</Link></li>
-        <li><Link to="/hello" onClick={ _toggleMenu }>Hello</Link></li>
         <li><Link to="/about" onClick={ _toggleMenu }>About</Link></li>
-        <li><Link to="/tools" onClick={ _toggleMenu }>Tools</Link></li>
-        <li><Link to="/counter" onClick={ _toggleMenu }>Counter</Link></li>
+        <li><Link to="/trello" onClick={ _toggleMenu }>Trello</Link></li>
       </ul>
     </nav>
   );
