@@ -3,33 +3,24 @@ import React, { PropTypes } from 'react';
 import ListItem from './ListItem';
 
 function List(props) {
-  const getDatas = () => {
-    const { data } = props;
-
-    return data.map((item, index) => (
-      (
-        <ListItem
-          id={item.id}
-          title={item.title}
-          text={item.text}
-          slug={item.slug}
-          key={index}
-        />
-      )
-    ));
-  };
+  const { list, cards } = props.data;
+  const getCards = () => (
+    cards.map((card, index) => (<ListItem card={card} key={index} />))
+  );
 
   return (
     <div className="list-block">
+      <h2>{list.name} - #id: {list.id}</h2>
+      <p>#idBoard: {list.idBoard}</p>
       <ul>
-        {getDatas()}
+        {getCards()}
       </ul>
     </div>
   );
 }
 
 List.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 export default List;
