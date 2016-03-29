@@ -1,6 +1,7 @@
 import express from 'express'; // Web framework
 import webpack from 'webpack';
 import path from 'path';
+import bodyParser from 'body-parser';
 
 import logger from './logger';
 import routes from './routes';
@@ -12,6 +13,9 @@ import webpackConfig from '../webpack/dev.config.js';
 const app = express(); // define server
 const compiler = webpack(webpackConfig);
 
+// Config body-parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.resolve('src/assets')));
 
