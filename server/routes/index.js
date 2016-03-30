@@ -19,6 +19,8 @@ export default function (app) {
     .get((req, res) => {
       const { id } = req.params;
 
+      // NOTE: It is possible to use this API:
+      // GET /1/lists/[idList]/cards - Get an array of Cards on a List
       t.get(`/1/lists/${id}`, req.query, (error, data) => {
         if (error) {
           return res.status(404).json({ text: 'So sad...', error });
