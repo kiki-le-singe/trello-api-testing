@@ -1,6 +1,7 @@
 // https://github.com/bcoe/yargs
 import { argv } from 'yargs';
 import path from 'path';
+import ip from 'ip';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -14,6 +15,7 @@ const config = {
   __DEBUG__: !!argv.debug,
 
   // Server Configuration
+  SERVER_HOSTNAME: ip.address() || 'localhost',
   SERVER_PORT: process.env.PORT || 8080,
 
   // Webpack Configuration
