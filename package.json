@@ -43,6 +43,7 @@
     "classnames": "^2.2.3",
     "express": "^4.13.4",
     "font-awesome": "^4.5.0",
+    "ip": "^1.1.2",
     "lodash": "^4.6.1",
     "node-trello": "^1.1.2",
     "normalize.css": "^4.0.0",
