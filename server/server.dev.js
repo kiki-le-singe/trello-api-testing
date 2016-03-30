@@ -38,6 +38,6 @@ routes(app);
  START THE SERVER
 ***************** */
 
-app.listen(projectConfig.SERVER_PORT, () => {
-  logger.info(`Express server listening on projectConfig.SERVER_PORT ${projectConfig.SERVER_PORT} in ${app.settings.env} node`);
+app.listen(projectConfig.SERVER_PORT, projectConfig.SERVER_HOSTNAME, () => {
+  logger.info(`Express server listening on http://${projectConfig.SERVER_HOSTNAME}:${projectConfig.SERVER_PORT} in ${app.settings.env} node`);
 });
