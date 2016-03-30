@@ -5,6 +5,7 @@
 * [Trello - Get started](https://developers.trello.com/get-started/start-building)
 * [Trello's API](https://developers.trello.com/advanced-reference)
 * [Authorizing a Client](https://developers.trello.com/authorize)
+* [Webhooks's API](https://developers.trello.com/apis/webhooks)
 
 ## Help and Resources
 
