@@ -10,6 +10,10 @@ export default function (app) {
   const router = express.Router(); // eslint-disable-line
   const routerAPI = express.Router(); // eslint-disable-line
 
+  router.get('/trelloCallback', (req, res) => {
+    res.status(200).json({ message: 'hooray! welcome to our trelloCallback!' });
+  });
+
   // test route to make sure everything is working (accessed at GET http://localhost:9000/api)
   routerAPI.get('/', (request, response) => {
     response.json({ message: 'hooray! welcome to our api!' });
