@@ -15,6 +15,24 @@ export default function (app) {
     response.json({ message: 'hooray! welcome to our api!' });
   });
 
+  routerAPI.route('/tokens/webhooks')
+    // Create a Webhook
+    .get((req, res) => {
+      const datas = {
+        description: 'My first webhook',
+        callbackURL: 'http://localhost:8080/trelloCallback',
+        idModel: '56c198b9c6220124fdfa2e70',
+      };
+
+      t.post(`/1/tokens/${TOKEN}/webhooks`, datas, (error, data) => {
+        if (error) {
+          return res.status(404).json({ text: 'So sad...', error });
+        }
+
+        return res.status(200).json(data);
+      });
+    });
+
   routerAPI.route('/lists/:id')
     // Get a simple list or a list with all cards containing only some fields
     .get((req, res) => {
