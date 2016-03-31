@@ -1,6 +1,7 @@
 import express from 'express';
 import Trello from 'node-trello';
 
+import logger from '../logger';
 import projectConfig from '../../config';
 
 const { KEY, TOKEN } = projectConfig.TRELLO;
@@ -12,6 +13,21 @@ export default function (app) {
 
   router.get('/trelloCallback', (req, res) => {
     res.status(200).json({ message: 'hooray! welcome to our trelloCallback!' });
+  });
+
+  // listening to POST requests at `/trelloCallback`,
+  // because it is our endpoint for Trello's webhooks.
+  router.post('/trelloCallback', (req, res) => {
+    const data = req.body;
+    const { model, action } = data;
+    const { type, memberCreator } = action;
+    const { name } = model;
+
+    logger.info('Webhook received!');
+    logger.info(`model: ${name}`);
+    logger.info(`actionType: ${type}`);
+    logger.info(`memberCreator: ${memberCreator.fullName}`);
+    console.log(data);
   });
 
   // test route to make sure everything is working (accessed at GET http://localhost:9000/api)
