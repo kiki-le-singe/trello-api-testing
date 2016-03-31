@@ -29,6 +29,12 @@ const config = {
     'slideout',
   ],
 
+  // Trello Configuration
+  TRELLO: {
+    KEY: '<KEY>',
+    TOKEN: '<TOKEN>',
+  },
+
   // Project Structure
   PATH_BASE: path.resolve(__dirname, '../'),
   ENTRY_APP: 'index',
