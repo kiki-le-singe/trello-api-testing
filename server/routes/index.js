@@ -8,13 +8,14 @@ const t = new Trello(KEY, TOKEN);
 
 export default function (app) {
   const router = express.Router(); // eslint-disable-line
+  const routerAPI = express.Router(); // eslint-disable-line
 
   // test route to make sure everything is working (accessed at GET http://localhost:9000/api)
-  router.get('/', (request, response) => {
+  routerAPI.get('/', (request, response) => {
     response.json({ message: 'hooray! welcome to our api!' });
   });
 
-  router.route('/lists/:id')
+  routerAPI.route('/lists/:id')
     // Get a simple list or a list with all cards containing only some fields
     .get((req, res) => {
       const { id } = req.params;
@@ -30,7 +31,7 @@ export default function (app) {
       });
     });
 
-  router.route('/cards/:id') // :id [card id or shortlink]
+  routerAPI.route('/cards/:id') // :id [card id or shortlink]
     // Get a card
     .get((req, res) => {
       const { id } = req.params;
@@ -44,7 +45,7 @@ export default function (app) {
       });
     });
 
-  router.route('/cards/:id/list') // :id [card id or shortlink]
+  routerAPI.route('/cards/:id/list') // :id [card id or shortlink]
     // Get a list from a card
     .get((req, res) => {
       const { id } = req.params;
@@ -59,5 +60,6 @@ export default function (app) {
     });
 
   // all of our routes will be prefixed with /api
-  app.use('/api', router);
+  app.use('/api', routerAPI);
+  app.use(router);
 }
