@@ -1,4 +1,4 @@
-# Testing Trello API
+# Trello API Testing
 
 ## Requirements
 
@@ -7,8 +7,8 @@
 ## Installation
 
 ```shell
-$ git clone git@github.com:kiki-le-singe/testing-trello-api.git
-$ cd testing-trello-api
+$ git clone git@github.com:kiki-le-singe/trello-api-testing.git
+$ cd trello-api-testing
 $ npm install
 ```
 
